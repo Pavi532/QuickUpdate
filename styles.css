@@ -1,0 +1,271 @@
+:root{
+    --ReVampBlue:#0050A0;
+    --main-font-color: #3A3A57;
+    --oldBlue: #21415A;
+    --defaultTileColour: #F3F6FA;
+    --currentTileColour: #00509F;
+    --defaultTitleTextColour: #2B2E39;
+    --sprite: url(icons.svg);
+    --saveIcon: url(saveIcon.svg);
+    --filterIcon: url(filterIcon.svg);
+    --gridIcon: url(gridIcon.svg);
+}
+
+html, body{
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.navbar{
+    background-color: var(--ReVampBlue);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 46px;
+}
+
+.navbar-brand{
+    font-size: unset;
+}
+
+.nav-link{
+    width: 24px;
+    height: 24px;
+}
+
+.nav-help{
+    background: transparent var(--sprite) no-repeat -21px -1832px;
+}
+
+.nav-grid{
+    background: transparent var(--sprite) no-repeat -18px -1870px;
+}
+
+.nav-ham{
+    background: transparent var(--sprite) no-repeat -18px -1913px;
+}
+
+.nav-user{
+    background: transparent url(loki_teaser_poster.jpg) no-repeat;
+    border-radius: 50%;
+    background-size: 29px;
+    padding: 14px;
+
+}
+
+.side-nav{
+    background-color: #ECEFF6;
+    width: 45px;
+    position: fixed;
+    top: 46px;
+    left: 0px;
+    height: 100%;
+}
+
+.main{
+    width: calc(100vw - 45px);
+    height: 100%;
+    position: fixed;
+    left: 45px;
+    top: 46px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.quick-update-title{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--main-font-color);
+}
+
+.owl-item.active .quick-update-tile{
+    cursor: pointer;
+}
+
+.quick-update-tile{
+    background-color: var(--defaultTileColour);
+    padding: 5px 5px;
+    height: 125px;
+    margin-right: 5px;
+    color: var(--defaultTitleTextColour);
+    border-radius: 7px;
+    border: 1px solid transparent;
+    transition: ease-in 0.2s;
+}
+
+.owl-item.active .quick-update-tile:hover{
+    border-color: #DDD;
+}
+
+.quick-update-tile.current-tile {
+    background-color: var(--defaultTileColour);
+    color: #FFF;
+}
+
+.owl-item.active .current-tile.quick-update-tile:hover{
+    border-color: transparent;
+}
+
+.quick-update-tile.current-tile{
+    background-color: var(--currentTileColour);
+}
+
+.tile-disabled{
+    opacity: 0.3;
+    pointer-events: none;
+    border-color: transparent !important;
+}
+
+.owl-nav i{
+    color: var(--oldBlue);
+}
+
+.owl-next{
+    position: absolute;
+    top: 47px;
+    right: 75px;
+    display: block !important;
+    transform: scale(2);
+    transition: ease-in-out 0.2s;
+}
+
+.owl-prev{
+    position: absolute;
+    top: 47px;
+    left: 75px;
+    display: block !important;
+    transform: scale(2);
+    transition: ease-in-out 0.2s;
+}
+
+.owl-nav button:hover{
+    background: transparent !important;
+    animation-name: zoomArrow;
+    animation-duration: 0.2s;
+    transform: scale(2.5);
+}
+
+@keyframes zoomArrow{
+    from{transform: scale(2);}
+    to{transform: scale(2.5);}
+}
+
+.owl-nav button.disabled{
+    display: none !important;
+}
+
+.quick-update-tile table{
+    width: 100%;
+}
+
+.tile-title-td{
+    width: 75%;
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.tile-icon-td{
+    width: 25%;
+    padding-top: 10px;
+}
+
+.tile-menu-td{
+    vertical-align: baseline;
+}
+
+.tile-bottom-icon-td{
+    text-align: center;
+    width: 20%;
+}
+
+.tile-title{
+    font-size: 13px;
+}
+
+.tile-title-double{
+    padding-top: 0px;
+    line-height: 21px;
+}
+
+.tile-icon{
+    padding: 10px;
+    background-color: var(--currentTileColour);
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.current-tile .tile-icon{
+    background-color: white;
+    color: var(--currentTileColour);
+}
+
+.tile-menu{
+    color: var(--currentTileColour);
+}
+
+.current-tile .tile-menu{
+    color: white;
+}
+
+.tile-value{
+    font-size: 50px;
+}
+
+.card-main{
+    height: calc(99vh - 249px );
+    padding-top: 10px;
+}
+
+.side-btn-div{
+    float: right;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-txt-btn{
+    background-color: white;
+    border: 2px solid var(--currentTileColour);
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    margin-left: -3px;
+    margin-top: 1px;
+    text-align: left;
+    padding-top: 7.5px;
+    margin-bottom: 10px;
+    transition: ease-in-out 0.5s;
+}
+
+.img-txt-btn .btn-txt{
+    opacity: 0;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.img-txt-btn:hover{
+    width: 145px;
+    padding-left: 40px;
+}
+
+.img-txt-btn:hover .btn-txt{
+    opacity: 1;
+    animation-delay: 5s;
+    transition: ease-in-out 0.4s;
+    transition-delay: 0.2s;
+}
+
+.save-btn-side{
+    background: transparent var(--saveIcon) no-repeat 8.5px center;
+}
+
+.filter-btn-side{
+    background: transparent var(--filterIcon) no-repeat 13px center;
+}
+
+.grid-btn-side{
+    background: transparent var(--gridIcon) no-repeat 12.5px center;
+}
+
