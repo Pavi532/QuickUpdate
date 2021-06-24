@@ -5,10 +5,10 @@
     --defaultTileColour: #F3F6FA;
     --currentTileColour: #00509F;
     --defaultTitleTextColour: #2B2E39;
-    --sprite: url(icons.svg);
-    --saveIcon: url(saveIcon.svg);
-    --filterIcon: url(filterIcon.svg);
-    --gridIcon: url(gridIcon.svg);
+    --sprite: url(/src/images/icons.svg);
+    --saveIcon: url(/src/images/saveIcon.svg);
+    --filterIcon: url(/src/images/filterIcon.svg);
+    --gridIcon: url(/src/images/gridIcon.svg);
 }
 
 html, body{
