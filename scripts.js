@@ -1,3 +1,4 @@
+
 function disableTile(activeTiles){ // Disables last tile
     $(".owl-item.active").eq(activeTiles-1).find('.quick-update-tile').addClass('tile-disabled');
 }
@@ -25,6 +26,19 @@ $(document).ready(function(){
             }
         }
     });
+
+    $(function() {  
+        $(".card-div").niceScroll({horizrailenabled: false});
+    });
+
+    var grid = $('.qpCard-main').masonry({
+        itemSelector: '.card',
+        columnWidth: 650,
+        gutter: 1,
+        horizontalOrder: true
+    });
+
+
 
 });
 
@@ -61,3 +75,4 @@ window.onload = function(){
         }
     });
 }
+

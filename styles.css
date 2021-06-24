@@ -5,11 +5,18 @@
     --defaultTileColour: #F3F6FA;
     --currentTileColour: #00509F;
     --defaultTitleTextColour: #2B2E39;
+    --cardToggleColour: #BAC4CC;
+    --badge-green: #39B54A;
+    --badge-yellow: #FFB80D;
+    --badge-blue: #004E9F;
+    --badge-cyan: #57DFCA;
+    --toggleDropShadow : drop-shadow(0px 2px 3px rgba(0,0,0,0.06));
     --userIcon: url(src/images/loki_teaser_poster.jpg);
     --sprite: url(src/images/icons.svg);
     --saveIcon: url(src/images/saveIcon.svg);
     --filterIcon: url(src/images/filterIcon.svg);
     --gridIcon: url(src/images/gridIcon.svg);
+    --arrowDown: url(src/images/arrowDown.svg);
 }
 
 html, body{
@@ -221,9 +228,13 @@ html, body{
 
 .side-btn-div{
     float: right;
-    width: 105px;
+    width: 110px;
+    padding-left: 5px;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    top: 214px;
+    right: 22px;
 }
 
 .img-txt-btn{
@@ -267,5 +278,85 @@ html, body{
 
 .grid-btn-side{
     background: transparent var(--gridIcon) no-repeat 12.5px center;
+}
+
+.card-div{
+    width: calc(100vw - 212px);
+    height: calc(99vh - 259px );
+}
+
+.card{
+    border-radius: 8px;
+    width: 625px;
+    margin-bottom: 25px;
+}
+
+.card .card-body{
+    height: 300px;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-header{
+    background-color: white;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header-text{
+    font-size: 16px;
+}
+
+.card .card-header-btn{
+    text-align: right;
+}
+
+.card .card-toggle{
+    background: transparent var(--arrowDown) no-repeat center center;
+    background-size: 13px;
+    background-color: white;
+    border: 1px solid var(--cardToggleColour);
+    border-radius: 50%;
+    height: 25px;
+    -webkit-filter: var(--toggleDropShadow);
+    filter: var(--toggleDropShadow);
+}
+
+.badge-div{
+    padding-top: 7px;
+}
+
+.badge{
+    margin-right: 5px;
+    font-weight: unset;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 10px;
+    padding: 4px 8px;
+}
+
+a.badge:hover{
+    color: white !important;
+}
+
+.badge-green{
+    background-color: var(--badge-green);
+}
+
+.badge-yellow{
+    background-color: var(--badge-yellow);
+}
+
+.badge-blue{
+    background-color: var(--badge-blue);
+}
+
+.badge-cyan{
+    background-color: var(--badge-cyan);
 }
 
