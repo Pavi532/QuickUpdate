@@ -431,7 +431,7 @@ a.badge:hover{
 
 .target-right{
     font-size: 12px;
-    padding-left: 11px;
+    padding-left: 14px;
 }
 
 .target-div{
@@ -452,4 +452,8 @@ a.badge:hover{
     margin: 3px 4px;
     padding: 2px;
     opacity: 0.5;
+}
+
+textarea{
+    display: none;
 }
