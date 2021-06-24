@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root{
     --ReVampBlue:#0050A0;
+    --letterDotColour: #00B4F0;
     --main-font-color: #3A3A57;
     --oldBlue: #21415A;
     --defaultTileColour: #F3F6FA;
@@ -32,7 +34,19 @@ html, body{
 }
 
 .navbar-brand{
-    font-size: unset;
+    line-height: 25px;
+}
+
+.camms-letter{
+    font-size: 35px;
+    color: white;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.camms-letter::after{
+    content: ".";
+    color: var(--letterDotColour);
+    font-family: 'Roboto';
 }
 
 .nav-link{
