@@ -12,6 +12,11 @@
     --badge-yellow: #FFB80D;
     --badge-blue: #004E9F;
     --badge-cyan: #57DFCA;
+    --red-circle: #ED1C24;
+    --yellow-circle: #FFB90F;
+    --green-circle: #39B54A;
+    --track-status: #656565;
+    --target-right: #6C757D3D;
     --toggleDropShadow : drop-shadow(0px 2px 3px rgba(0,0,0,0.06));
     --userIcon: url(src/images/loki_teaser_poster.jpg);
     --sprite: url(src/images/icons.svg);
@@ -378,3 +383,73 @@ a.badge:hover{
     background-color: var(--badge-cyan);
 }
 
+.track-circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 3px;
+    margin-top: 2.5px;
+}
+
+.red-circle{
+    background-color: var(--red-circle);
+    opacity: 0.1;
+}
+
+.yellow-circle{
+    background-color: var(--yellow-circle);
+    opacity: 0.1;
+}
+
+.green-circle{
+    background-color: var(--green-circle);
+    opacity: 0.1;
+}
+
+.track-circle.active{
+    opacity: 1;
+}
+
+.red-circle.active ~ .track-status::before{
+    content: "Off Track";
+}
+
+.yellow-circle.active ~ .track-status::before{
+    content: "Monitor";
+}
+
+.green-circle.active + .track-status::before{
+    content: "On Track";
+}
+
+.track-status{
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 3px;
+    color: var(--track-status);
+}
+
+.target-right{
+    font-size: 12px;
+    padding-left: 11px;
+}
+
+.target-div{
+    padding: 0px 5px;
+    border-right: 1px solid var(--target-right);
+}
+
+.period-div{
+    padding: 0px 5px;
+}
+
+.dot{
+    width: 3px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--track-status);
+    display: inline-block;
+    margin: 3px 4px;
+    padding: 2px;
+    opacity: 0.5;
+}
