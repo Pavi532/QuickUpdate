@@ -5,6 +5,7 @@
     --defaultTileColour: #F3F6FA;
     --currentTileColour: #00509F;
     --defaultTitleTextColour: #2B2E39;
+    --userIcon: url(src/images/loki_teaser_poster.jpg);
     --sprite: url(src/images/icons.svg);
     --saveIcon: url(src/images/saveIcon.svg);
     --filterIcon: url(src/images/filterIcon.svg);
@@ -45,7 +46,7 @@ html, body{
 }
 
 .nav-user{
-    background: transparent url(loki_teaser_poster.jpg) no-repeat;
+    background: transparent var(--userIcon) no-repeat;
     border-radius: 50%;
     background-size: 29px;
     padding: 14px;
