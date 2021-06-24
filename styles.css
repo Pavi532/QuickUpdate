@@ -33,6 +33,10 @@ html, body{
     height: 46px;
 }
 
+.nav-top .nav-item{
+    margin: 0px 5px;
+}
+
 .navbar-brand{
     line-height: 25px;
 }
