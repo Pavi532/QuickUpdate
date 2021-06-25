@@ -508,6 +508,11 @@ a.badge:hover{
     width: 32px;
 }
 
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+}
+
 .slider-value:focus{
     outline: none;
     box-shadow: none;
