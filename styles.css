@@ -508,6 +508,11 @@ a.badge:hover{
     width: 32px;
 }
 
+.slider-value:focus{
+    outline: none;
+    box-shadow: none;
+}
+
 .slider-value-symbol{
     padding-top: 4px;
 }
