@@ -15,12 +15,18 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.3/rangeslider.min.css"
+        integrity="sha512-Rp0yZ3NMh1xOUZ4VHYggmX4pq4ZJdpcOETH03qBD5qNDsqTBw1MzUnX0T5PcTJmr2mNTOmtbxsHaGwzjylNpHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.3/rangeslider.css"
+        integrity="sha512-FkNnPJevAkIHB3NqUiMadWNcoMcOCPQUMyF55JeAFZmPcSR6wK6TgZ0qL6bMrRqGNaaVS8CAwBYceORhdTUILQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -31,6 +37,9 @@
         integrity="sha512-zMfrMAZYAlNClPKjN+JMuslK/B6sPM09BGvrWlW+cymmPmsUT1xJF3P4kxI3lOh9zypakSgWaTpY6vDJY/3Dig=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.3/rangeslider.min.js"
+        integrity="sha512-BUlWdwDeJo24GIubM+z40xcj/pjw7RuULBkxOTc+0L9BaGwZPwiwtbiSVzv31qR7TWx7bs6OPTE5IyfLOorboQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts.js"></script>
     <title>Quick Update</title>
 </head>
@@ -248,7 +257,7 @@
                             <div class="card-body">
                                 <div class="flex-row track-top-div">
                                     <div class="col-md-3 col-sm-3 flex-row">
-                                        <span class="red-circle track-circle active"></span>
+                                        <span class="red-circle track-circle"></span>
                                         <span class="yellow-circle track-circle"></span>
                                         <span class="green-circle track-circle"></span>
                                         <span class="track-status"></span>
@@ -259,9 +268,14 @@
                                         <div class="period-div"> <span>Oct</span><span class="dot"></span>Dec</div>
                                     </div>
                                 </div>
-                                <div class="flex-row">
-                                    <div class="col-md-10 col-sm-0">3</div>
-                                    <div class="col-md-2 col-sm-2">4</div>
+                                <div class="flex-row track-slider-row">
+                                    <div class="slider-div">
+                                        <input type="number" class="track-slider" type="range" min="0" max="100" value="0" step="1" role="range">
+                                    </div>
+                                    <div class="slider-value-div flex-row">
+                                        <input class="slider-value form-control form-control-sm">
+                                        <span class="slider-value-symbol"></span>
+                                    </div>
                                 </div>
                                 <div class="flex-row">
                                     5
@@ -294,7 +308,7 @@
                                 <div class="flex-row track-top-div">
                                     <div class="col-md-3 col-sm-3 flex-row">
                                         <span class="red-circle track-circle"></span>
-                                        <span class="yellow-circle track-circle active"></span>
+                                        <span class="yellow-circle track-circle "></span>
                                         <span class="green-circle track-circle"></span>
                                         <span class="track-status"></span>
                                     </div>
@@ -302,6 +316,14 @@
                                     <div class="col-md-3 col-sm-3 target-right flex-row ">
                                         <div class="target-div"> <span>Target </span><span>75%</span></div>
                                         <div class="period-div"> <span>Oct</span><span class="dot"></span>Dec</div>
+                                    </div>
+                                </div>
+                                <div class="flex-row track-slider-row">
+                                    <div class="slider-div">
+                                        <input type="number" class="track-slider" type="range" min="0" max="100" value="0"  step="1" role="range">
+                                    </div>
+                                    <div class="slider-value-div flex-row">
+                                        <input class="slider-value form-control form-control-sm"></input><span class="slider-value-symbol"></span>
                                     </div>
                                 </div>
                             </div>
@@ -330,13 +352,21 @@
                                     <div class="col-md-3 col-sm-3 flex-row">
                                         <span class="red-circle track-circle"></span>
                                         <span class="yellow-circle track-circle"></span>
-                                        <span class="green-circle track-circle active"></span>
+                                        <span class="green-circle track-circle "></span>
                                         <span class="track-status"></span>
                                     </div>
                                     <div class="col-md-6 col-sm-6"></div>
                                     <div class="col-md-3 col-sm-3 target-right flex-row ">
                                         <div class="target-div"> <span>Target </span><span>75%</span></div>
                                         <div class="period-div"> <span>Oct</span><span class="dot"></span>Dec</div>
+                                    </div>
+                                </div>
+                                <div class="flex-row track-slider-row">
+                                    <div class="slider-div">
+                                        <input type="number" class="track-slider" type="range" min="0" max="100" value="0"  step="1" role="range">
+                                    </div>
+                                    <div class="slider-value-div flex-row">
+                                        <input class="slider-value form-control form-control-sm"></input><span class="slider-value-symbol"></span>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +394,7 @@
                                 <div class="flex-row track-top-div">
                                     <div class="col-md-3 col-sm-3 flex-row">
                                         <span class="red-circle track-circle"></span>
-                                        <span class="yellow-circle track-circle active"></span>
+                                        <span class="yellow-circle track-circle "></span>
                                         <span class="green-circle track-circle"></span>
                                         <span class="track-status"></span>
                                     </div>
@@ -372,6 +402,14 @@
                                     <div class="col-md-3 col-sm-3 target-right flex-row ">
                                         <div class="target-div"> <span>Target </span><span>75%</span></div>
                                         <div class="period-div"> <span>Oct</span><span class="dot"></span>Dec</div>
+                                    </div>
+                                </div>
+                                <div class="flex-row track-slider-row">
+                                    <div class="slider-div">
+                                        <input type="number" class="track-slider" type="range" min="0" max="100" value="0"  step="1" role="range">
+                                    </div>
+                                    <div class="slider-value-div flex-row">
+                                        <input class="slider-value form-control form-control-sm"></input><span class="slider-value-symbol"></span>
                                     </div>
                                 </div>
                             </div>
@@ -399,7 +437,7 @@
                             <div class="card-body">
                                 <div class="flex-row track-top-div">
                                     <div class="col-md-3 col-sm-3 flex-row">
-                                        <span class="red-circle track-circle active"></span>
+                                        <span class="red-circle track-circle "></span>
                                         <span class="yellow-circle track-circle"></span>
                                         <span class="green-circle track-circle"></span>
                                         <span class="track-status"></span>
@@ -408,6 +446,14 @@
                                     <div class="col-md-3 col-sm-3 target-right flex-row ">
                                         <div class="target-div"> <span>Target </span><span>75%</span></div>
                                         <div class="period-div"> <span>Oct</span><span class="dot"></span>Dec</div>
+                                    </div>
+                                </div>
+                                <div class="flex-row track-slider-row">
+                                    <div class="slider-div">
+                                        <input type="number" class="track-slider" type="range" min="0" max="100" value="0"  step="1" role="range">
+                                    </div>
+                                    <div class="slider-value-div flex-row">
+                                        <input class="slider-value form-control form-control-sm"></input><span class="slider-value-symbol"></span>
                                     </div>
                                 </div>
                             </div>

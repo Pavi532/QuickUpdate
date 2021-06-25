@@ -17,6 +17,10 @@
     --green-circle: #39B54A;
     --track-status: #656565;
     --target-right: #6C757D3D;
+    --track-slider-bg: #EBF2F7;
+    --slider-tumb-border: #425C72;
+    --slider-thumb: #FFF;
+    --targetValue: #1B3D57;
     --toggleDropShadow : drop-shadow(0px 2px 3px rgba(0,0,0,0.06));
     --userIcon: url(src/images/loki_teaser_poster.jpg);
     --sprite: url(src/images/icons.svg);
@@ -24,6 +28,7 @@
     --filterIcon: url(src/images/filterIcon.svg);
     --gridIcon: url(src/images/gridIcon.svg);
     --arrowDown: url(src/images/arrowDown.svg);
+    --pencilIcon:url(src/images/pencilIcon.svg);
 }
 
 html, body{
@@ -431,7 +436,7 @@ a.badge:hover{
 
 .target-right{
     font-size: 12px;
-    padding-left: 14px;
+    padding-left: 12px;
 }
 
 .target-div{
@@ -452,6 +457,66 @@ a.badge:hover{
     margin: 3px 4px;
     padding: 2px;
     opacity: 0.5;
+}
+
+.slider-div{
+    padding-top: 15px;
+    width: 89%;
+}
+
+.rangeslider--horizontal{
+    background: var(--track-slider-bg);
+    height: 10px;
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+.rangeslider--horizontal .rangeslider__handle{
+    top: -6.5px;
+    background-image: none;
+    height: 23px;
+    width: 23px;
+    border: 2px solid var(--slider-tumb-border);
+    box-shadow: none;
+}
+
+.rangeslider--horizontal .rangeslider__handle::after{
+    display: none;
+}
+
+.rangeslider__fill{
+    box-shadow: none;
+    background-color: var(--green-circle);
+    border-radius: 3px;
+}
+
+.slider-value-div{
+    padding-top: 2px;
+    width: 11%;
+    background: transparent var(--pencilIcon) no-repeat right center;
+    background-size: 15px;
+}
+
+.slider-value{
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: right;
+    color: var(--targetValue);
+    padding-right: 0;
+    padding-left: 3px;
+    width: 32px;
+}
+
+.slider-value-symbol{
+    padding-top: 4px;
+}
+
+.slider-value-symbol::after{
+    content: "%";
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--targetValue);
 }
 
 textarea{
