@@ -22,6 +22,7 @@
     --slider-thumb: #FFF;
     --targetValue: #1B3D57;
     --date-status-font-color: #6F6F6F;
+    --char-counter-color: #C4C4C4;
     --toggleDropShadow : drop-shadow(0px 2px 3px rgba(0,0,0,0.06));
     --quick-link-hover: 0px 0px 0px 4px rgba(58,247,255,0.22);
     --userIcon: url(src/images/loki_teaser_poster.jpg);
@@ -36,6 +37,7 @@
     --quickMailIcon: url(src/images/envelopeIcon.svg);
     --quickCommentIcon: url(src/images/chatIcon.svg);
     --quickReportIcon: url(src/images/reportIcon.svg);
+    --commentArrowIcon: url(src/images/commentArrowIcon.svg);
 }
 
 html, body{
@@ -327,7 +329,8 @@ html, body{
 }
 
 .card .card-body{
-    height: 300px;
+    height: 373px;
+
 }
 
 .flex-row{
@@ -356,10 +359,25 @@ html, body{
     background-size: 13px;
     background-color: white;
     border: 1px solid var(--cardToggleColour);
-    border-radius: 50%;
+    border-radius: 25px;
     height: 25px;
+    width: 25px;
     -webkit-filter: var(--toggleDropShadow);
     filter: var(--toggleDropShadow);
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+        transform:rotate(0deg); 
+    transition: 0.2s;
+}
+
+.card-toggle-rotate{
+    -webkit-transform:rotate(180deg) !important;
+    -moz-transform:rotate(180deg) !important;
+    -ms-transform:rotate(180deg) !important;
+    -o-transform:rotate(180deg) !important;
+        transform:rotate(180deg) !important; 
 }
 
 .badge-div{
@@ -546,7 +564,7 @@ a.badge:hover{
 }
 
 .strat-date-div , .end-date-div{
-    width: 20%;
+    width: 24%;
 }
 
 .status-dropdown-div{
@@ -554,7 +572,7 @@ a.badge:hover{
 }
 
 .quick-links-div{
-    width: 20%;
+    width: 18%;
 }
 
 .date-status-row .form-label{
@@ -629,8 +647,45 @@ a.badge:hover{
     background-size: 19px;
 }
 
+.comment-row{
+    padding-top: 15px;
+}
 
+.comment-row .form-label{
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--targetValue);
+    float: left;
+}
 
-textarea{
-    display: none;
+.comment-row .comment-area{
+    resize: none;
+    font-size: 12px;
+}
+
+@-moz-document url-prefix() {
+    /* since FireFox kept adding an extra row to the bottom for horizontal scroll */
+    textarea {
+        height: 175px;
+    }
+}
+
+.comment-row .comment-arrow-btn{
+    float: right;
+    background: transparent var(--commentArrowIcon) no-repeat center center;
+    background-size: 12px;
+}
+
+.char-counter{
+    position: relative;
+    top: -23px;
+    right: 10px;
+    float: right;
+    font-size: 12px;
+    color: var(--char-counter-color);
+}
+
+.char-counter::after{
+    content: " / 500";
 }

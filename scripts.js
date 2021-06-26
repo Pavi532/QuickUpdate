@@ -19,6 +19,24 @@ function changeTrackStatusy(object, val, onTrackColour, monitorColour, offTrackC
     }
 }
 
+function expanCard(object, cardDivInitHieght, cardBodyDefaultHeight, cardBodyExpandedHeight){
+    if(object.attr('is-expanded') == "false"){
+        object.addClass('card-toggle-rotate');
+        object.parents('.card-header').siblings('.card-body').height(cardBodyExpandedHeight);
+        $('.card-div').height(cardDivInitHieght);
+        $(".card-div").getNiceScroll().resize();
+        $(".qpCard-main").masonry('layout');
+        object.attr('is-expanded','true');
+    }else{
+        object.removeClass('card-toggle-rotate');
+        object.parents('.card-header').siblings('.card-body').height(cardBodyDefaultHeight);
+        $('.card-div').height(cardDivInitHieght);
+        $(".card-div").getNiceScroll().resize();
+        $(".qpCard-main").masonry('layout');
+        object.attr('is-expanded','false');
+    }
+}
+
 
 $(document).ready(function(){
 
@@ -27,6 +45,9 @@ $(document).ready(function(){
     let offTrackColour = getComputedStyle(document.documentElement,null).getPropertyValue('--red-circle');
 
     var container= $('.qpCard-main');
+    var cardDivInitHieght = $('.card-div').height();
+    var cardBodyDefaultHeight = $('.card-body').height();
+    var cardBodyExpandedHeight = 600;
 
     var qpTiles = $("#qpTiles");
     qpTiles.on('initialized.owl.carousel').find(".quick-update-tile").eq(0).addClass("current-tile");
@@ -61,15 +82,28 @@ $(document).ready(function(){
         gutter: 1,
         horizontalOrder: true
     });
+    
+    $('.card-toggle').on('click',function () {
 
-    // $(".card")
-    // .mouseenter(function () {
-    //     $(this).height(500);
-    //     $(".qpCard-main").masonry('layout');
-    // }).mouseleave(function () {
-    //     $(this).height(392);
-    //     $(".qpCard-main").masonry('layout');
-    // });
+        expanCard($(this), cardDivInitHieght, cardBodyDefaultHeight, cardBodyExpandedHeight);
+
+        // if($(this).attr('is-expanded') == "false"){
+        //     $(this).addClass('card-toggle-rotate');
+        //     $(this).parents('.card-header').siblings('.card-body').height(cardBodyExpandedHeight);
+        //     $('.card-div').height(cardDivInitHieght);
+        //     $(".card-div").getNiceScroll().resize();
+        //     $(".qpCard-main").masonry('layout');
+        //     $(this).attr('is-expanded','true');
+        // }else{
+        //     $(this).removeClass('card-toggle-rotate');
+        //     $(this).parents('.card-header').siblings('.card-body').height(cardBodyDefaultHeight);
+        //     $('.card-div').height(cardDivInitHieght);
+        //     $(".card-div").getNiceScroll().resize();
+        //     $(".qpCard-main").masonry('layout');
+        //     $(this).attr('is-expanded','false');
+        // }
+        
+    });
 
     $('.track-slider').rangeslider({polyfill : false});
 
@@ -94,6 +128,11 @@ $(document).ready(function(){
 
     $('.date-input').datepicker({
         container: container
+    });
+
+    $('.comment-area').on('input',function(){
+        var charCount = $(this).val().length;
+        $(this).siblings('.char-counter').text(charCount);
     });
 
 });
@@ -131,8 +170,6 @@ window.onload = function(){
         }
     });
 
-
 }
-
 
 
