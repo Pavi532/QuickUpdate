@@ -20,17 +20,18 @@ function changeTrackStatusy(object, val, onTrackColour, monitorColour, offTrackC
 }
 
 function expanCard(object, cardDivInitHieght, cardBodyDefaultHeight, cardBodyExpandedHeight){
+    var cardDivNewHeight = $(window).height() * 0.99 - 259;
     if(object.attr('is-expanded') == "false"){
         object.addClass('card-toggle-rotate');
         object.parents('.card-header').siblings('.card-body').height(cardBodyExpandedHeight);
-        $('.card-div').height(cardDivInitHieght);
+        $('.card-div').height(cardDivNewHeight);
         $(".card-div").getNiceScroll().resize();
         $(".qpCard-main").masonry('layout');
         object.attr('is-expanded','true');
     }else{
         object.removeClass('card-toggle-rotate');
         object.parents('.card-header').siblings('.card-body').height(cardBodyDefaultHeight);
-        $('.card-div').height(cardDivInitHieght);
+        $('.card-div').height(cardDivNewHeight);
         $(".card-div").getNiceScroll().resize();
         $(".qpCard-main").masonry('layout');
         object.attr('is-expanded','false');
