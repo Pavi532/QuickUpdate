@@ -26,6 +26,8 @@ $(document).ready(function(){
     let monitorColour = getComputedStyle(document.documentElement,null).getPropertyValue('--yellow-circle');
     let offTrackColour = getComputedStyle(document.documentElement,null).getPropertyValue('--red-circle');
 
+    var container= $('.qpCard-main');
+
     var qpTiles = $("#qpTiles");
     qpTiles.on('initialized.owl.carousel').find(".quick-update-tile").eq(0).addClass("current-tile");
     $('.owl-carousel').owlCarousel({
@@ -88,6 +90,10 @@ $(document).ready(function(){
         }
         
         
+    });
+
+    $('.date-input').datepicker({
+        container: container
     });
 
 });
