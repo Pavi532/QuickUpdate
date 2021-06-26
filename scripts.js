@@ -173,4 +173,9 @@ window.onload = function(){
 
 }
 
+$(window).resize(function(){
+    $('.card-div').height($(window).height() * 0.99 - 259);
+    $(".card-div").getNiceScroll().resize();
+});
+
 
